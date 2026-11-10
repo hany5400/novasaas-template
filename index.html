@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaAI — Next-Gen AI & SaaS Platform</title>
+  <meta name="description" content="Ship modern AI applications 10x faster with intelligent workflows, automated pipelines, and enterprise-grade telemetry.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            },
+            dark: {
+              bg: '#090a0f',
+              card: '#12141d',
+              border: 'rgba(255, 255, 255, 0.08)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#090a0f] text-slate-200 antialiased relative min-h-screen selection:bg-indigo-500 selection:text-white">
+
+  <!-- Background Decorative Glow Orbs -->
+  <div class="glow-orb-primary top-0 left-1/2 -translate-x-1/2 opacity-70"></div>
+  <div class="glow-orb-purple top-[800px] left-10 opacity-50"></div>
+  <div class="glow-orb-primary top-[2200px] right-10 opacity-40"></div>
+
+  <!-- Background Grid Pattern -->
+  <div class="fixed inset-0 bg-grid-pattern opacity-40 radial-gradient-mask pointer-events-none z-0"></div>
+
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#090a0f]/80 border-b border-white/5 transition-all">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-cyan-400 p-[1px] shadow-lg shadow-indigo-500/20">
+          <div class="w-full h-full bg-[#090a0f] rounded-[11px] flex items-center justify-center">
+            <svg class="w-5 h-5 text-indigo-400 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-white flex items-center gap-1.5">
+          Nova<span class="text-indigo-400">AI</span>
+          <span class="text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">v2.5</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#features" class="hover:text-white transition-colors">Features</a>
+        <a href="#demo" class="hover:text-white transition-colors">Live Demo</a>
+        <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+        <a href="#testimonials" class="hover:text-white transition-colors">Reviews</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#pricing" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Sign In</a>
+        <a href="#pricing" class="relative group inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-lg shadow-indigo-500/25 transition-all duration-300 hover:shadow-indigo-500/40 hover:-translate-y-0.5">
+          Get Started Free
+          <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden px-6 pt-4 pb-6 bg-[#0c0e15] border-b border-white/5 space-y-4">
+      <a href="#features" class="block text-slate-300 hover:text-white">Features</a>
+      <a href="#demo" class="block text-slate-300 hover:text-white">Live Demo</a>
+      <a href="#pricing" class="block text-slate-300 hover:text-white">Pricing</a>
+      <a href="#faq" class="block text-slate-300 hover:text-white">FAQ</a>
+      <div class="pt-4 border-t border-white/5 flex flex-col gap-3">
+        <a href="#pricing" class="text-center py-2 text-slate-300">Sign In</a>
+        <a href="#pricing" class="text-center py-2.5 rounded-xl bg-indigo-600 font-semibold text-white">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative pt-16 pb-24 md:pt-28 md:pb-36 z-10 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+
+      <!-- Release Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs sm:text-sm font-medium mb-8 hover:bg-indigo-500/15 transition-colors cursor-pointer group">
+        <span class="flex h-2 w-2 rounded-full bg-indigo-400 animate-pulse"></span>
+        <span>✨ Nova 2.5 is officially live</span>
+        <span class="text-indigo-400 group-hover:translate-x-0.5 transition-transform">See what's new &rarr;</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.12]">
+        Build & Scale Intelligent AI Apps 
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-300 to-cyan-300">at the Speed of Thought</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-normal leading-relaxed">
+        The all-in-one developer workspace combining autonomous agent orchestration, sub-50ms vector search, and enterprise-grade telemetry.
+      </p>
+
+      <!-- CTA Buttons & Command Line -->
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 shadow-xl shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2">
+          Start Building Free
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+
+        <!-- Copy Command Pill -->
+        <button id="copyInstallBtn" class="w-full sm:w-auto px-5 py-4 rounded-xl bg-slate-900/80 border border-white/10 hover:border-indigo-500/50 text-slate-300 hover:text-white font-mono text-sm flex items-center justify-center gap-3 transition-all group">
+          <span class="text-indigo-400">$</span>
+          <span id="installCodeText">npx create-nova-app@latest</span>
+          <svg class="w-4 h-4 text-slate-500 group-hover:text-indigo-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Trust Metrics -->
+      <div class="mt-10 flex items-center justify-center gap-8 text-xs text-slate-400">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span>No credit card required</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span>Free 14-day Pro trial</span>
+        </div>
+        <div class="hidden sm:flex items-center gap-2">
+          <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span>SOC2 & HIPAA Compliant</span>
+        </div>
+      </div>
+
+      <!-- App Interface Hero Mockup -->
+      <div class="mt-16 relative mx-auto max-w-6xl">
+        <div class="relative rounded-2xl p-2 bg-gradient-to-b from-white/10 via-white/5 to-transparent shadow-2xl shadow-indigo-950/60 border border-white/10 backdrop-blur-xl">
+          <div class="rounded-xl overflow-hidden bg-[#0e1017] border border-white/5 text-left">
+            
+            <!-- Window Bar -->
+            <div class="px-5 py-3.5 bg-[#12141f] border-b border-white/5 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                <span class="ml-3 text-xs font-mono text-slate-400">nova-dashboard / prod-cluster-us-east</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Live • 99.99%
+                </span>
+              </div>
+            </div>
+
+            <!-- Dashboard Content Preview Grid -->
+            <div class="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6">
+              
+              <!-- Left Mini Stats / Sidebar -->
+              <div class="lg:col-span-4 space-y-4">
+                <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5">
+                  <span class="text-xs font-medium text-slate-400">Total Tokens Processed</span>
+                  <div class="mt-1 flex items-baseline justify-between">
+                    <span class="text-2xl font-bold text-white">48.2M</span>
+                    <span class="text-xs text-emerald-400 font-semibold">+34.8%</span>
+                  </div>
+                  <div class="mt-3 w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                    <div class="bg-indigo-500 h-full rounded-full" style="width: 78%"></div>
+                  </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5">
+                  <span class="text-xs font-medium text-slate-400">Average P99 Latency</span>
+                  <div class="mt-1 flex items-baseline justify-between">
+                    <span class="text-2xl font-bold text-white">38 ms</span>
+                    <span class="text-xs text-cyan-400 font-semibold">-12ms vs avg</span>
+                  </div>
+                  <div class="mt-3 flex gap-1">
+                    <div class="h-6 w-full bg-indigo-500/30 rounded"></div>
+                    <div class="h-8 w-full bg-indigo-500/50 rounded"></div>
+                    <div class="h-5 w-full bg-indigo-500/30 rounded"></div>
+                    <div class="h-10 w-full bg-indigo-500 rounded"></div>
+                    <div class="h-7 w-full bg-indigo-500/60 rounded"></div>
+                    <div class="h-9 w-full bg-cyan-400 rounded"></div>
+                  </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-gradient-to-br from-indigo-950/40 to-purple-950/40 border border-indigo-500/20">
+                  <div class="flex items-center gap-2 text-indigo-400 font-semibold text-xs">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    <span>Autonomous Guardrails Active</span>
+                  </div>
+                  <p class="mt-2 text-xs text-slate-400 leading-relaxed">
+                    Zero PII leaks detected. Automated prompt sanitization applied across 1,420 endpoints.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Right Code / Interactive Output -->
+              <div class="lg:col-span-8 flex flex-col justify-between p-5 rounded-xl bg-slate-950/80 border border-white/5 font-mono text-xs">
+                <div class="space-y-3">
+                  <div class="text-slate-500">// Initialize Nova AI Agent Pipeline</div>
+                  <div class="text-purple-400"><span class="text-indigo-400">import</span> { NovaAgent, MemoryBuffer } <span class="text-indigo-400">from</span> <span class="text-emerald-300">'@nova/core'</span>;</div>
+                  
+                  <div class="pt-2 text-slate-300">
+                    <span class="text-indigo-400">const</span> agent = <span class="text-indigo-400">new</span> NovaAgent({<br>
+                    &nbsp;&nbsp;model: <span class="text-emerald-300">'nova-ultra-v2'</span>,<br>
+                    &nbsp;&nbsp;temperature: <span class="text-amber-400">0.2</span>,<br>
+                    &nbsp;&nbsp;ragEnabled: <span class="text-cyan-400">true</span>,<br>
+                    &nbsp;&nbsp;plugins: [<span class="text-emerald-300">'github'</span>, <span class="text-emerald-300">'stripe'</span>, <span class="text-emerald-300">'postgres'</span>]<br>
+                    });
+                  </div>
+
+                  <div class="pt-2 text-slate-500">// Execution Stream (Real-Time)</div>
+                  <div class="p-3 rounded-lg bg-indigo-950/30 border border-indigo-500/20 text-slate-300 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                      <span>Agent reasoning complete (142 tokens generated in 31ms)</span>
+                    </div>
+                    <span class="text-emerald-400 font-bold">200 OK</span>
+                  </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-slate-400">
+                  <span class="text-[11px]">Active model: <strong class="text-slate-200">nova-ultra-v2 (8K Context)</strong></span>
+                  <span class="text-[11px] text-indigo-400 cursor-pointer hover:underline">Inspect trace &rarr;</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SOCIAL PROOF / LOGOS ================= -->
+  <section class="py-12 border-y border-white/5 bg-[#0b0d14]/60">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p class="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-8">
+        Trusted by engineering teams at industry-defining companies
+      </p>
+      
+      <div class="flex flex-wrap items-center justify-center gap-10 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+        <!-- Logo 1: Acme -->
+        <div class="flex items-center gap-2 text-slate-300 font-bold text-lg tracking-wider">
+          <svg class="w-6 h-6 text-indigo-400" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          ACME LABS
+        </div>
+        <!-- Logo 2: Vercel style -->
+        <div class="flex items-center gap-2 text-slate-300 font-bold text-lg tracking-wider">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L24 22H0L12 1Z"/></svg>
+          VERTEX
+        </div>
+        <!-- Logo 3: Supabase style -->
+        <div class="flex items-center gap-2 text-slate-300 font-bold text-lg tracking-wider">
+          <svg class="w-6 h-6 text-emerald-400" viewBox="0 0 24 24" fill="currentColor"><path d="M11 2L2 14h9l-1 8 11-14h-9l1-6z"/></svg>
+          PULSE.IO
+        </div>
+        <!-- Logo 4: Linear style -->
+        <div class="flex items-center gap-2 text-slate-300 font-bold text-lg tracking-wider">
+          <svg class="w-6 h-6 text-purple-400" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="4"/></svg>
+          QUANTUM
+        </div>
+        <!-- Logo 5: Raycast style -->
+        <div class="flex items-center gap-2 text-slate-300 font-bold text-lg tracking-wider">
+          <svg class="w-6 h-6 text-rose-400" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 22 12 12 22 2 12"/></svg>
+          HYPERFLOW
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BENTO GRID FEATURES ================= -->
+  <section id="features" class="py-24 md:py-32 relative z-10">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold">Architecture & Features</h2>
+        <h3 class="mt-3 text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Everything You Need to Ship Enterprise-Grade AI
+        </h3>
+        <p class="mt-4 text-base sm:text-lg text-slate-400">
+          Engineered from the ground up for high-throughput, low-latency, and zero-compromise developer productivity.
+        </p>
+      </div>
+
+      <!-- Bento Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Card 1: Large Span 2 -->
+        <div class="md:col-span-2 glass-panel glass-panel-hover rounded-2xl p-8 relative overflow-hidden">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-white">Smart Model Routing & Fallback</h4>
+          <p class="mt-2 text-slate-400 text-sm leading-relaxed max-w-xl">
+            Automatically route every incoming prompt to the most cost-effective and accurate model (GPT-4o, Claude 3.5 Sonnet, or Gemini Pro) with zero latency overhead.
+          </p>
+
+          <!-- Visual Component -->
+          <div class="mt-6 p-4 rounded-xl bg-slate-950/60 border border-white/5 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+            <span class="flex items-center gap-2 text-slate-300">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span> OpenAI GPT-4o
+            </span>
+            <span class="text-slate-600">&rarr;</span>
+            <span class="flex items-center gap-2 text-slate-300">
+              <span class="w-2 h-2 rounded-full bg-indigo-400"></span> Claude 3.5
+            </span>
+            <span class="text-slate-600">&rarr;</span>
+            <span class="flex items-center gap-2 text-slate-300">
+              <span class="w-2 h-2 rounded-full bg-cyan-400"></span> DeepSeek R1
+            </span>
+            <span class="px-2 py-1 rounded bg-indigo-500/20 text-indigo-300 text-[11px]">Cost Saved: -64%</span>
+          </div>
+        </div>
+
+        <!-- Card 2: 1 Col -->
+        <div class="glass-panel glass-panel-hover rounded-2xl p-8 relative overflow-hidden">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-6">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-white">Sub-50ms Vector RAG</h4>
+          <p class="mt-2 text-slate-400 text-sm leading-relaxed">
+            Ultra-fast semantic search embedded across 300+ edge locations worldwide for instant retrieval.
+          </p>
+          <div class="mt-6 text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-300">
+            28ms <span class="text-xs text-slate-500 font-normal">P95 Global</span>
+          </div>
+        </div>
+
+        <!-- Card 3: 1 Col -->
+        <div class="glass-panel glass-panel-hover rounded-2xl p-8 relative overflow-hidden">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-white">PII & Prompt Sanitization</h4>
+          <p class="mt-2 text-slate-400 text-sm leading-relaxed">
+            Never leak API credentials, credit cards, or customer sensitive data to public AI providers.
+          </p>
+          <div class="mt-6 inline-flex items-center gap-1 text-xs text-emerald-400 font-semibold">
+            ✓ Automated HIPAA & SOC2 Compliant
+          </div>
+        </div>
+
+        <!-- Card 4: Span 2 -->
+        <div class="md:col-span-2 glass-panel glass-panel-hover rounded-2xl p-8 relative overflow-hidden">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-white">Automated SDK & Client Generation</h4>
+          <p class="mt-2 text-slate-400 text-sm leading-relaxed max-w-xl">
+            Type-safe SDKs generated automatically in TypeScript, Python, Go, and Swift. One click to publish to NPM and PyPI.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-lg bg-slate-800 text-xs text-slate-300 font-mono">TypeScript</span>
+            <span class="px-3 py-1 rounded-lg bg-slate-800 text-xs text-slate-300 font-mono">Python 3.12</span>
+            <span class="px-3 py-1 rounded-lg bg-slate-800 text-xs text-slate-300 font-mono">Go 1.22</span>
+            <span class="px-3 py-1 rounded-lg bg-slate-800 text-xs text-slate-300 font-mono">Swift / iOS</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE DEMO / TABS ================= -->
+  <section id="demo" class="py-20 bg-[#0c0e16]/80 border-y border-white/5 relative z-10">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold">Interactive Playground</h2>
+        <h3 class="mt-2 text-3xl font-bold text-white">Experience the Power of Nova in Action</h3>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="flex justify-center gap-3 mb-8">
+        <button data-tab="tab-agents" class="feature-tab-btn px-5 py-2.5 rounded-xl text-sm font-semibold border transition-all bg-indigo-600/20 border-indigo-500/40 text-white">
+          🤖 Autonomous Agent
+        </button>
+        <button data-tab="tab-telemetry" class="feature-tab-btn px-5 py-2.5 rounded-xl text-sm font-semibold border transition-all bg-slate-900/40 border-white/5 text-slate-400 hover:text-white">
+          📊 Real-Time Telemetry
+        </button>
+        <button data-tab="tab-deploy" class="feature-tab-btn px-5 py-2.5 rounded-xl text-sm font-semibold border transition-all bg-slate-900/40 border-white/5 text-slate-400 hover:text-white">
+          ⚡ 1-Click Deployment
+        </button>
+      </div>
+
+      <!-- Tab Screens Container -->
+      <div class="max-w-4xl mx-auto glass-panel rounded-2xl p-6 border border-white/10 shadow-2xl">
+        
+        <!-- Screen 1: Agent -->
+        <div id="tab-agents" class="demo-screen block space-y-4 font-mono text-xs">
+          <div class="flex items-center justify-between pb-3 border-b border-white/5 text-slate-400">
+            <span>Agent Mission: Analyze customer churn and draft retention offers</span>
+            <span class="text-emerald-400">● Status: Active</span>
+          </div>
+          <div class="space-y-2 text-slate-300">
+            <div class="text-indigo-400">[02:14:01] &gt; Querying PostgreSQL database (table: users_inactive_30d)</div>
+            <div class="text-slate-400">[02:14:02] &gt; Found 342 accounts matching criteria. Generating personalized emails via GPT-4o...</div>
+            <div class="text-emerald-300">[02:14:03] &gt; 342 draft campaigns staged in Resend queue. Estimated recovery value: $14,200/mo.</div>
+          </div>
+        </div>
+
+        <!-- Screen 2: Telemetry -->
+        <div id="tab-telemetry" class="demo-screen hidden space-y-4 font-mono text-xs">
+          <div class="flex items-center justify-between pb-3 border-b border-white/5 text-slate-400">
+            <span>Cluster Metrics (Last 60 Minutes)</span>
+            <span class="text-cyan-400">● 99.98% Healthy</span>
+          </div>
+          <div class="grid grid-cols-3 gap-4 text-center">
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-white/5">
+              <span class="text-slate-500">Total Requests</span>
+              <div class="text-xl font-bold text-white mt-1">1,829,301</div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-white/5">
+              <span class="text-slate-500">Error Rate</span>
+              <div class="text-xl font-bold text-emerald-400 mt-1">0.002%</div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-white/5">
+              <span class="text-slate-500">Cost Per 1K Calls</span>
+              <div class="text-xl font-bold text-indigo-400 mt-1">$0.0018</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Screen 3: Deployment -->
+        <div id="tab-deploy" class="demo-screen hidden space-y-4 font-mono text-xs">
+          <div class="flex items-center justify-between pb-3 border-b border-white/5 text-slate-400">
+            <span>Target Region: Global Edge Anycast</span>
+            <span class="text-purple-400">● Ready to deploy</span>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-white/5 text-slate-300 space-y-2">
+            <div>$ nova deploy --prod --region all</div>
+            <div class="text-emerald-400">✔ Docker image built in 4.2s (size: 28MB)</div>
+            <div class="text-emerald-400">✔ Replicated across 32 world datacenters</div>
+            <div class="text-white font-bold">🚀 Live at: https://api.yourdomain.com/v1/predict</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PRICING SECTION ================= -->
+  <section id="pricing" class="py-24 md:py-32 relative z-10">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold">Transparent Pricing</h2>
+        <h3 class="mt-3 text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Simple Plans for Teams of Any Size
+        </h3>
+        <p class="mt-4 text-slate-400">
+          Scale effortlessly from zero to billions of API calls. Change or cancel anytime.
+        </p>
+
+        <!-- Billing Toggle -->
+        <div class="mt-8 flex items-center justify-center gap-4">
+          <span class="text-sm font-medium text-slate-300">Monthly</span>
+          <button id="billingToggle" class="w-14 h-8 rounded-full bg-slate-700 p-1 flex items-center transition-colors focus:outline-none" aria-label="Toggle annual billing">
+            <div class="w-6 h-6 rounded-full bg-white shadow-md transform transition-transform translate-x-1"></div>
+          </button>
+          <span class="text-sm font-medium text-slate-300 flex items-center gap-1.5">
+            Yearly
+            <span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold">Save 20%</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Pricing Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+        
+        <!-- Card 1: Starter -->
+        <div class="glass-panel rounded-2xl p-8 flex flex-col justify-between">
+          <div>
+            <h4 class="text-lg font-bold text-white">Starter</h4>
+            <p class="mt-2 text-sm text-slate-400">Perfect for solo developers and side projects.</p>
+            <div class="mt-6 flex items-baseline gap-1">
+              <span id="starterPrice" class="text-4xl font-extrabold text-white">$19</span>
+              <span class="billing-period text-sm text-slate-400">/month</span>
+            </div>
+            
+            <ul class="mt-8 space-y-3 text-sm text-slate-300">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Up to 100,000 monthly tokens
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                3 Autonomous AI Agents
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Community Discord Support
+              </li>
+            </ul>
+          </div>
+
+          <a href="#" class="mt-8 w-full py-3 text-center rounded-xl font-semibold text-sm bg-slate-800 hover:bg-slate-700 text-white transition-colors">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Card 2: Pro (Highlighted) -->
+        <div class="relative glass-panel rounded-2xl p-8 flex flex-col justify-between border-2 border-indigo-500 shadow-2xl shadow-indigo-500/20">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-bold text-xs uppercase tracking-wider shadow">
+            Most Popular
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold text-white">Pro Developer</h4>
+            <p class="mt-2 text-sm text-slate-400">For fast-growing startups shipping AI apps.</p>
+            <div class="mt-6 flex items-baseline gap-1">
+              <span id="proPrice" class="text-4xl font-extrabold text-white">$49</span>
+              <span class="billing-period text-sm text-slate-400">/month</span>
+            </div>
+            
+            <ul class="mt-8 space-y-3 text-sm text-slate-300">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                5,000,000 monthly tokens
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Unlimited Autonomous Agents
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Smart Multi-LLM Routing
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Priority 24/7 Slack channel
+              </li>
+            </ul>
+          </div>
+
+          <a href="#" class="mt-8 w-full py-3 text-center rounded-xl font-semibold text-sm bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white shadow-lg shadow-indigo-600/30 transition-all">
+            Start 14-Day Free Trial
+          </a>
+        </div>
+
+        <!-- Card 3: Enterprise -->
+        <div class="glass-panel rounded-2xl p-8 flex flex-col justify-between">
+          <div>
+            <h4 class="text-lg font-bold text-white">Enterprise</h4>
+            <p class="mt-2 text-sm text-slate-400">For high-scale apps demanding custom SLAs.</p>
+            <div class="mt-6 flex items-baseline gap-1">
+              <span id="enterprisePrice" class="text-4xl font-extrabold text-white">$99</span>
+              <span class="billing-period text-sm text-slate-400">/month</span>
+            </div>
+            
+            <ul class="mt-8 space-y-3 text-sm text-slate-300">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Custom High-volume Token Quota
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Dedicated On-Premise VPC / Cloud
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                99.99% Guaranteed SLA
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Custom Data Security & BAA Signed
+              </li>
+            </ul>
+          </div>
+
+          <a href="#" class="mt-8 w-full py-3 text-center rounded-xl font-semibold text-sm bg-slate-800 hover:bg-slate-700 text-white transition-colors">
+            Contact Sales
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section id="testimonials" class="py-20 bg-[#0c0e15]/60 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold">Wall of Love</h2>
+        <h3 class="mt-2 text-3xl font-bold text-white">Loved by Founders and Engineers Worldwide</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Review 1 -->
+        <div class="glass-panel p-6 rounded-2xl space-y-4">
+          <div class="flex text-amber-400 text-sm">★★★★★</div>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            "Nova cut our LLM bill by 60% in the first week. The automated fallback between Claude and GPT-4o is absolute magic."
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <div class="w-10 h-10 rounded-full bg-indigo-500/30 flex items-center justify-center font-bold text-indigo-300">
+              SL
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-white">Sarah Lin</div>
+              <div class="text-xs text-slate-400">CTO at HyperScale AI</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="glass-panel p-6 rounded-2xl space-y-4">
+          <div class="flex text-amber-400 text-sm">★★★★★</div>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            "We shipped our entire AI search assistant in two days instead of four months. The developer experience is unmatched."
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <div class="w-10 h-10 rounded-full bg-purple-500/30 flex items-center justify-center font-bold text-purple-300">
+              MK
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-white">Marcus Keller</div>
+              <div class="text-xs text-slate-400">Founder & CEO, PulseMetrics</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="glass-panel p-6 rounded-2xl space-y-4">
+          <div class="flex text-amber-400 text-sm">★★★★★</div>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            "The automated sanitization saved us from major compliance headaches with European clients. Essential tool for our stack."
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <div class="w-10 h-10 rounded-full bg-cyan-500/30 flex items-center justify-center font-bold text-cyan-300">
+              DR
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-white">David Ramirez</div>
+              <div class="text-xs text-slate-400">Head of Security, FinCorp</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FAQ SECTION ================= -->
+  <section id="faq" class="py-24 relative z-10">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <div class="text-center mb-16">
+        <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold">Frequently Asked Questions</h2>
+        <h3 class="mt-2 text-3xl font-bold text-white">Got Questions? We've Got Answers.</h3>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item glass-panel rounded-xl overflow-hidden border border-white/5">
+          <button class="faq-question w-full p-5 text-left flex items-center justify-between font-semibold text-white hover:text-indigo-400 transition-colors">
+            <span>How does the 14-day free trial work?</span>
+            <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-5 pb-5 text-sm text-slate-400 leading-relaxed">
+            You get full unrestricted access to all Pro features for 14 days. No credit card is required to sign up, and your account will automatically downgrade to the free tier if you choose not to subscribe.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item glass-panel rounded-xl overflow-hidden border border-white/5">
+          <button class="faq-question w-full p-5 text-left flex items-center justify-between font-semibold text-white hover:text-indigo-400 transition-colors">
+            <span>Can I customize this template with my own branding?</span>
+            <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-5 pb-5 text-sm text-slate-400 leading-relaxed">
+            Yes, 100%! All code is written using clean HTML5 and standard Tailwind CSS utility classes. You can swap colors, copy, logos, and links in minutes.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item glass-panel rounded-xl overflow-hidden border border-white/5">
+          <button class="faq-question w-full p-5 text-left flex items-center justify-between font-semibold text-white hover:text-indigo-400 transition-colors">
+            <span>What LLM providers are supported out of the box?</span>
+            <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-5 pb-5 text-sm text-slate-400 leading-relaxed">
+            Nova supports OpenAI (GPT-4o, o1, o3-mini), Anthropic (Claude 3.5 Sonnet / Haiku), Google Gemini 1.5 & 2.0, DeepSeek, and any custom Ollama / HuggingFace self-hosted endpoint.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item glass-panel rounded-xl overflow-hidden border border-white/5">
+          <button class="faq-question w-full p-5 text-left flex items-center justify-between font-semibold text-white hover:text-indigo-400 transition-colors">
+            <span>Is this template commercially licensed?</span>
+            <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer hidden px-5 pb-5 text-sm text-slate-400 leading-relaxed">
+            Yes! Purchasing gives you a lifetime commercial license to use this template for personal projects or client client work.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PRE-FOOTER CTA BANNER ================= -->
+  <section class="py-20 relative z-10">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="relative rounded-3xl p-10 md:p-16 bg-gradient-to-r from-indigo-900/60 via-purple-900/40 to-slate-900/90 border border-indigo-500/30 text-center overflow-hidden shadow-2xl shadow-indigo-950/50">
+        
+        <h3 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Ready to Build the Future of AI?
+        </h3>
+        <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl mx-auto">
+          Join thousands of developers shipping faster, cheaper, and safer AI products today.
+        </p>
+
+        <!-- Newsletter / Instant Waitlist -->
+        <form id="newsletterForm" class="mt-8 max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+          <input type="email" required placeholder="Enter your work email..." class="px-5 py-3.5 rounded-xl bg-slate-950/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 flex-1 text-sm">
+          <button type="submit" class="px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-semibold text-sm text-white shadow-lg shadow-indigo-600/30 transition-all shrink-0">
+            Get Early Access
+          </button>
+        </form>
+
+        <div class="mt-4 text-xs text-slate-400">
+          Instant setup • No card required • Cancel anytime
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-white/5 bg-[#07080c] py-12 text-sm text-slate-400 relative z-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-2 font-semibold text-white">
+        <div class="w-6 h-6 rounded-lg bg-indigo-600 flex items-center justify-center text-xs">▲</div>
+        <span>NovaAI Studio</span>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-6 text-xs">
+        <a href="#features" class="hover:text-white transition-colors">Features</a>
+        <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+        <a href="#faq" class="hover:text-white transition-colors">Docs</a>
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+      </div>
+
+      <div class="text-xs text-slate-500">
+        &copy; 2026 Ahmed Studio. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 border border-indigo-500/40 text-white px-5 py-3.5 rounded-xl shadow-2xl text-sm font-medium transition-all duration-300 opacity-0 translate-y-4 pointer-events-none">
+    Notification
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
